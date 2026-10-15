@@ -10,8 +10,8 @@
    The public key is safe to use in the browser. Never put a
    PRIVATE API key in this file.
    ============================================================ */
-const KLAVIYO_PUBLIC_KEY = 'YOUR_KLAVIYO_PUBLIC_KEY'; // <-- REPLACE
-const KLAVIYO_LIST_ID = 'YOUR_KLAVIYO_LIST_ID';       // <-- REPLACE
+const KLAVIYO_PUBLIC_KEY = 'VHb6yM'; // <-- REPLACE
+const KLAVIYO_LIST_ID = 'XtHszd';       // <-- REPLACE
 const KLAVIYO_REVISION = '2026-10-15';
 
 (function () {
