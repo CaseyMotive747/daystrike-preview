@@ -35,8 +35,19 @@ jobs:
               const status = error.status || error.response?.status || "";
               core.warning(`createPagesSite failed (${status}): ${error.message}`);
               if (status === 409) {
-                core.setOutput("enabled", "true");
-                return;
+                try {
+                  const site = await github.rest.repos.getPages({ owner, repo });
+                  const branch = site.data.source && site.data.source.branch;
+                  const path = site.data.source && site.data.source.path;
+                  const buildType = site.data.build_type;
+                  core.info(`Existing Pages site build_type=${buildType} branch=${branch} path=${path}`);
+                  if (buildType !== "workflow" && branch === "main" && path === "/") {
+                    core.setOutput("enabled", "true");
+                    return;
+                  }
+                } catch (getError) {
+                  core.warning(`getPages failed (${getError.status || ""}): ${getError.message}`);
+                }
               }
               core.setOutput("enabled", "false");
             }
