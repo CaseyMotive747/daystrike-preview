@@ -4,19 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAYSTRIKE™ | Join the waitlist</title>
-  <meta name="description" content="Energy + hydration with creatine. One scoop. Built in Utah. Strike the day." />
+  <meta name="description" content="Specially formulated for people who refuse to let a fun night get in the way of kicking off the day. Strike the day." />
   <meta property="og:title" content="DAYSTRIKE™ | Join the waitlist" />
-  <meta property="og:description" content="Energy + hydration with creatine. One scoop. Built in Utah. Strike the day." />
+  <meta property="og:description" content="Specially formulated for people who refuse to let a fun night get in the way of kicking off the day. Strike the day." />
   <meta property="og:image" content="https://drinkdaystrike.com/assets/og-waitlist.jpg" />
   <meta property="og:url" content="https://drinkdaystrike.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="Energy, hydration and creatine. One scoop instead of four. Strike the day." />
   <meta name="twitter:image" content="https://drinkdaystrike.com/assets/og-waitlist.jpg" />
   <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0c'/%3E%3Cpath d='M7 21a9 9 0 0 1 18 0' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M5 25h22' stroke='%23ff3b4f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="./assets/world-mileone.webp" />
+  <link rel="preload" as="image" href="./assets/hero-mobile.webp" type="image/webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="./assets/hero-desktop.webp" type="image/webp" media="(min-width: 768px)" />
   <link rel="stylesheet" href="./base.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -48,16 +50,17 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <picture class="hero__media">
-        <img src="./assets/world-mileone.webp" width="1400" height="933" alt="A woman trail running on red rock at sunrise" fetchpriority="high" />
+        <source media="(max-width: 767px)" srcset="./assets/hero-mobile.webp" type="image/webp" />
+        <source media="(max-width: 767px)" srcset="./assets/hero-mobile.jpg" type="image/jpeg" />
+        <source srcset="./assets/hero-desktop.webp" type="image/webp" />
+        <img src="./assets/hero-desktop.jpg" width="1280" height="720" alt="DAYSTRIKE Ice Cold Watermelon" fetchpriority="high" />
       </picture>
-      <div class="hero__shade" aria-hidden="true"></div>
       <div class="container hero__content">
-        <p class="eyebrow">Based in Utah</p>
+        <p class="eyebrow">Energy + Hydration · Zero sugar</p>
         <h1 id="hero-title" class="hero__title">Strike<br />the <span class="hero__accent">day.</span></h1>
-        <p class="hero__lede">Caffeine, electrolytes, creatine, and ginger in one scoop. Zero sugar.</p>
+        <p class="hero__lede">Specially formulated for people who refuse to let a fun night get in the way of kicking off the day. Caffeine, electrolytes, creatine, and prebiotic fiber in one scoop. Zero sugar.</p>
         <div class="hero__ctas">
           <a href="WAITLIST_URL" class="btn btn--primary">Join the waitlist</a>
-          <a href="#formula" class="btn btn--ghost">See what's inside</a>
         </div>
       </div>
     </section>
@@ -220,7 +223,7 @@
           </details>
           <details>
             <summary>How much caffeine is in a serving?</summary>
-            <p>180 mg, about a large coffee.</p>
+            <p>180 mg, about two cups of coffee.</p>
           </details>
           <details>
             <summary>Can I have more than one a day?</summary>
