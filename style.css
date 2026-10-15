@@ -184,8 +184,18 @@ body { background: var(--color-bg); color: var(--color-text); transition: backgr
 .timeline__key p { font-weight: 700; }
 @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: var(--space-1); } }
 
+/* Packaging preview — full width on small screens */
+.pack-preview { padding-block: var(--space-6) var(--space-2); }
+.pack { margin: 0; }
+.pack img { width: 100%; height: auto; border-radius: var(--radius-md); }
+.pack__caption { margin-top: var(--space-2); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); }
+@media (min-width: 720px) {
+  .pack-preview { padding-block: var(--space-10) var(--space-4); }
+  .pack-preview .pack { max-width: 960px; }
+}
+
 /* Flavors */
-.flavors { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+.flavors { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
 .flavor { position: relative; border-radius: var(--radius-lg); background: #0e0e10; color: #fff; overflow: hidden; display: flex; flex-direction: column; border: 1px solid oklch(1 0 0 / 0.08); }
 .flavor__img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 40%; }
 .flavor__body { padding: clamp(var(--space-6), 3vw, var(--space-10)); border-top: 3px solid var(--flavor); }
@@ -196,6 +206,11 @@ body { background: var(--color-bg); color: var(--color-text); transition: backgr
 .flavor--red .flavor__kicker { color: #ff7684 !important; }
 .flavor--green .flavor__kicker { color: #b8ec74 !important; }
 .flavor__name { font-family: var(--font-display); font-weight: 800; font-size: var(--text-2xl); line-height: 1; margin: var(--space-2) 0 var(--space-4); position: relative; }
+.flavor .pack img { border-radius: 0; }
+.flavor .pack__caption { margin-top: 0; padding: var(--space-3) clamp(var(--space-6), 3vw, var(--space-10)) 0; }
+@media (min-width: 720px) {
+  .flavors { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* Split */
 .split { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(var(--space-8), 6vw, var(--space-20)); align-items: center; }
