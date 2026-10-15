@@ -1,0 +1,66 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+    outputs:
+      enabled: ${{ steps.enable.outputs.enabled }}
+    steps:
+      - name: Enable Pages from main at root
+        id: enable
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            try {
+              const res = await github.rest.repos.createPagesSite({
+                owner,
+                repo,
+                source: { branch: "main", path: "/" },
+              });
+              core.info(`Pages site created (${res.status}).`);
+              core.setOutput("enabled", "true");
+            } catch (error) {
+              const status = error.status || error.response?.status || "";
+              core.warning(`createPagesSite failed (${status}): ${error.message}`);
+              if (status === 409) {
+                core.setOutput("enabled", "true");
+                return;
+              }
+              core.setOutput("enabled", "false");
+            }
+
+  deploy:
+    needs: enable
+    if: needs.enable.outputs.enabled != 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
