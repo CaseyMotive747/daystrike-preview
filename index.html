@@ -4,26 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAYSTRIKE™ | Join the waitlist</title>
-  <meta name="description" content="Specially formulated for people who refuse to let a fun night get in the way of kicking off the day. Strike the day." />
+  <meta name="description" content="Energy + hydration with creatine. One scoop. Strike the day." />
   <meta property="og:title" content="DAYSTRIKE™ | Join the waitlist" />
-  <meta property="og:description" content="Specially formulated for people who refuse to let a fun night get in the way of kicking off the day. Strike the day." />
+  <meta property="og:description" content="Energy + hydration with creatine. One scoop. Strike the day." />
   <meta property="og:image" content="https://drinkdaystrike.com/assets/og-waitlist.jpg" />
   <meta property="og:url" content="https://drinkdaystrike.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description" content="Energy, hydration and creatine. One scoop instead of four. Strike the day." />
   <meta name="twitter:image" content="https://drinkdaystrike.com/assets/og-waitlist.jpg" />
   <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0c'/%3E%3Cpath d='M7 21a9 9 0 0 1 18 0' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M5 25h22' stroke='%23ff3b4f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="./assets/hero-mobile.webp" type="image/webp" media="(max-width: 767px)" />
-  <link rel="preload" as="image" href="./assets/hero-desktop.webp" type="image/webp" media="(min-width: 768px)" />
+  <link rel="preload" as="image" href="./assets/hero-product.webp" type="image/webp" />
   <link rel="stylesheet" href="./base.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <a class="skip-link sr-only" href="#main">Skip to content</a>
+  <a class="skip-link visually-hidden" href="#main">Skip to content</a>
 
   <header class="header" id="top">
     <div class="container header__inner">
@@ -49,12 +47,6 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-      <picture class="hero__media">
-        <source media="(max-width: 767px)" srcset="./assets/hero-mobile.webp" type="image/webp" />
-        <source media="(max-width: 767px)" srcset="./assets/hero-mobile.jpg" type="image/jpeg" />
-        <source srcset="./assets/hero-desktop.webp" type="image/webp" />
-        <img src="./assets/hero-desktop.jpg" width="1280" height="720" alt="DAYSTRIKE Ice Cold Watermelon" fetchpriority="high" />
-      </picture>
       <div class="hero__content">
         <p class="eyebrow">Energy + Hydration · Zero sugar</p>
         <h1 id="hero-title" class="hero__title">Strike<br />the <span class="hero__accent">day.</span></h1>
@@ -63,19 +55,10 @@
           <a href="WAITLIST_URL" class="btn btn--primary">Join the waitlist</a>
         </div>
       </div>
-    </section>
-
-    <!-- PACKAGING -->
-    <section class="pack-preview" aria-label="Packaging preview">
-      <div class="container">
-        <figure class="pack">
-          <picture>
-            <source srcset="./assets/pack-watermelon.webp" type="image/webp" />
-            <img src="./assets/pack-watermelon.jpg" width="1280" height="720" alt="DAYSTRIKE Ice Cold Watermelon packaging preview" />
-          </picture>
-          <figcaption class="pack__caption">Packaging preview</figcaption>
-        </figure>
-      </div>
+      <picture class="hero__media">
+        <source srcset="./assets/hero-product.webp" type="image/webp" />
+        <img src="./assets/hero-product.jpg" width="1280" height="720" alt="DAYSTRIKE Ice Cold Watermelon tub, stick, and a glass of the drink" fetchpriority="high" />
+      </picture>
     </section>
 
     <!-- STRIP -->
@@ -135,7 +118,7 @@
             <h3 class="flavor__name">Watermelon</h3>
             <p>Juicy and clean, with a crisp finish. Pour it over ice in 12 to 16 oz of water.</p>
             <p class="flavor__formats">Comes in a 30-serving tub or single-serve sticks.</p>
-            <a href="#flavors" class="btn btn--primary btn--sm flavor__buy" data-shop>Join the waitlist</a>
+            <a href="#flavors" class="btn btn--primary btn--sm flavor__buy">Join the waitlist</a>
             </div>
           </article>
           <article class="flavor flavor--green">
@@ -144,7 +127,7 @@
             <h3 class="flavor__name">Green Apple</h3>
             <p>Tart and bright. More apple than candy.</p>
             <p class="flavor__formats">Comes in a 30-serving tub or single-serve sticks.</p>
-            <a href="#flavors" class="btn btn--primary btn--sm flavor__buy" data-shop>Join the waitlist</a>
+            <a href="#flavors" class="btn btn--primary btn--sm flavor__buy">Join the waitlist</a>
             </div>
           </article>
         </div>
@@ -194,13 +177,13 @@
                     <div class="spec"><dt>Sodium</dt><dd><span class="spec__num">500-600</span> mg</dd></div>
           <div class="spec"><dt>Potassium</dt><dd><span class="spec__num">300</span> mg</dd></div>
           <div class="spec"><dt>Magnesium</dt><dd><span class="spec__num">75</span> mg</dd><p>A gentle amount.</p></div>
-          <div class="spec"><dt>PHGG</dt><dd><span class="spec__num">1</span> g</dd></div>
+          <div class="spec"><dt>Prebiotic fiber</dt><dd><span class="spec__num">1</span> g</dd></div>
           <div class="spec"><dt>Sugar</dt><dd><span class="spec__num">0</span> g</dd><p>Zero sugar.</p></div>
         </dl>
         <p class="fda-note">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
         <div class="notfor">
           <h3>Who DAYSTRIKE isn't for</h3>
-          <p>Anyone under 18, pregnant or nursing, or sensitive to caffeine. If you have a medical condition or take medication, check with your doctor first. Not intended to be mixed with alcohol.</p>
+          <p>Anyone under 18, pregnant or nursing, or sensitive to caffeine. If you have a medical condition or take medication, check with your doctor. Not intended to be mixed with alcohol.</p>
         </div>
       </div>
     </section>
@@ -244,7 +227,7 @@
           <h2 id="world-title" class="section__title">Late nights, early tracks.</h2>
         </div>
         <div class="world__grid">
-          <figure class="world__item w4"><img src="./assets/world-firstchair.webp" width="1400" height="788" loading="lazy" style="object-position:30% 50%" alt="A snowboarder on a chairlift at sunrise holding a bottle of red DAYSTRIKE drink" /></figure>
+          <figure class="world__item w4"><img src="./assets/world-chairlift.webp" width="1400" height="788" loading="lazy" style="object-position:30% 50%" alt="A snowboarder on a chairlift at sunrise holding a bottle of red DAYSTRIKE drink" /></figure>
           <figure class="world__item w2"><img src="./assets/world-mileone.webp" width="1400" height="933" loading="lazy" style="object-position:38% 20%" alt="A woman trail running on red rock at sunrise" /></figure>
           <figure class="world__item w4"><img src="./assets/world-longtable.webp" width="1400" height="933" loading="lazy" style="object-position:50% 50%" alt="Friends laughing around a long candlelit dinner table under string lights" /></figure>
         </div>
@@ -264,7 +247,7 @@
         <span class="brand__word">DAYSTRIKE</span>
       </div>
       <p class="footer__tag">Strike the day.</p>
-      <p class="footer__fine">Contains caffeine. 18+ only. Not for pregnant or nursing people or anyone sensitive to caffeine.</p>
+      <p class="footer__fine">Contains caffeine. Ages 18 and up. Not for pregnant or nursing people or anyone sensitive to caffeine.</p>
       <p class="footer__fine">© 2026 DAYSTRIKE™. All rights reserved.</p>
     </div>
   </footer>
