@@ -69,8 +69,9 @@ a { color: inherit; }
 
 /* Hero */
 .hero { position: relative; isolation: isolate; background: var(--bg); padding-top: 76px; display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.42fr); align-items: center; gap: var(--s4); min-height: min(100svh, 940px); --gut: max(clamp(1.25rem, 4vw, 3rem), calc((100% - 1240px) / 2)); padding-inline: var(--gut); column-gap: var(--s10); }
-.hero__media { grid-column: 2; grid-row: 1; position: relative; overflow: hidden; border-radius: var(--r-lg); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
-.hero__media img { width: 100%; height: auto; }
+.hero__media { position: absolute; inset: 0 0 0 auto; width: 74%; z-index: -1; overflow: hidden; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 55%; }
+.hero__media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--bg) 0%, rgba(8,9,11,.88) 10%, rgba(8,9,11,.5) 21%, rgba(8,9,11,.16) 32%, rgba(8,9,11,0) 41%), linear-gradient(0deg, var(--bg) 0%, rgba(8,9,11,0) 14%); }
 .hero__copy { grid-column: 1; grid-row: 1; align-self: center; width: auto; margin: 0; padding: var(--s10) 0; }
 .hero__title { font-family: var(--font-display); font-weight: 900; font-size: clamp(3.2rem, 0.8rem + 5.6vw, 7rem); line-height: .88; letter-spacing: -.035em; font-style: italic; }
 .hero__lede { font-size: var(--text-lg); line-height: 1.45; max-width: 30ch; margin-top: var(--s6); }
@@ -86,7 +87,9 @@ a { color: inherit; }
 @media (max-width: 1000px) {
   .hero { grid-template-columns: 1fr; min-height: 0; padding-inline: 0; gap: 0; }
   .hero__copy { grid-column: 1; grid-row: 1; padding: var(--s8) clamp(1.25rem, 4vw, 3rem) var(--s6); }
-  .hero__media { grid-column: 1; grid-row: 2; border-radius: 0; box-shadow: none; }
+  .hero__media { position: relative; inset: auto; width: 100%; z-index: 0; grid-column: 1; grid-row: 2; aspect-ratio: 4 / 3; }
+  .hero__media img { object-position: 78% 60%; }
+  .hero__media::after { background: linear-gradient(180deg, var(--bg) 0%, rgba(8,9,11,0) 22%), linear-gradient(0deg, var(--bg) 0%, rgba(8,9,11,0) 14%); }
   .hero__title { font-size: clamp(3.2rem, 13vw, 6rem); }
   .hero__lede { margin-top: var(--s4); font-size: 1.1rem; }
 }
